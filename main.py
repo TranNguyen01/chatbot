@@ -3,6 +3,7 @@ from warnings import catch_warnings
 from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
 import nltk
+nltk.download('punkt')
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
@@ -51,6 +52,7 @@ def get_drug_api_result(drug_name, intent):
   drugInfo = response.json()
   label = intent['tag']
   result = drugInfo["results"][0][label][0]
+  print(result)
   return result
 
 
