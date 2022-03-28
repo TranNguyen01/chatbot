@@ -46,8 +46,7 @@
           $("#chatbox").append(`<p style="text-align: left;">${result}</p>`);
         },
         error: function (e) {
-          const result = { success: false, message: "Thêm không thành công!" };
-          showToast(result);
+          console.log(e);
         },
       });
 
