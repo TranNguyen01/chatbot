@@ -1,6 +1,7 @@
 
 import re
 import nltk
+nltk.download('punkt')
 import numpy
 from thefuzz import fuzz
 from nltk.stem.lancaster import LancasterStemmer
