@@ -109,9 +109,12 @@
       "tag": "random_recipe",
       "patterns": [
         "Công thức nấu ăn ngẫu nhiên",
-        "Tạo công thức nấu ăn ngẫu nhiên",
+        "Tạo công thức nấu ăn",
         "Công thức ngẫu nhiên",
-        "Công thức bất kỳ"
+        "Công thức bất kỳ",
+        "Công thức random",
+        "Radom công thức nấu ăn",
+        "Tạo một công thức"
       ],
       "api": {
         "url": "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random",
@@ -147,7 +150,10 @@
         "Covid",
         "Corona",
         "Virus covid-19",
-        "Thông tin về covid-19"
+        "Thông tin về covid-19",
+        "Thống kê covid-19",
+        "Cập nhật thông tin covid-19",
+        "Tình hình dịch bệnh covid-19"
       ],
       "api": {
         "url": "https://covid-news-and-statistics.p.rapidapi.com/country/vietnam",
@@ -166,7 +172,7 @@
         "Tin tức",
         "Bản tin y tế",
         "Bản tin sức khỏe",
-        "Tin y tế"
+        "Thời sự y tế"
       ],
       "api": {
         "url": "https://current-news.p.rapidapi.com/news/health",
@@ -217,11 +223,17 @@
     },
     {
       "tag": "name",
-      "patterns": ["Tên bạn là gì", "Tôi nên gọi bạn là gì", "Tên gì"],
+      "patterns": [
+        "Tên bạn là gì",
+        "Tôi nên gọi bạn là gì",
+        "Tên gì",
+        "Bạn là ai",
+        "Bạn là gì"
+      ],
       "responses": [
         "Tôi là chatbot chăm sóc sức khỏe.",
         "Tôi là trợ lý chăm sóc sức khỏe của bạn!",
-        "Bạn có thể gọi tôi là chatbot."
+        "Bạn có thể gọi tôi là HealthBot."
       ],
       "type": "saying"
     },
@@ -231,7 +243,8 @@
         "Bạn có thể làm gì cho tôi",
         "Bạn làm gì",
         "Bạn có thể giúp gì",
-        "Công việc của bạn"
+        "Công việc của bạn",
+        "Công dụng của bạn"
       ],
       "responses": [
         "Bạn có thể hỏi tôi các thông tin về y tế, sức khỏe",

@@ -2,19 +2,16 @@ import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
-
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Activation, Dropout
 from tensorflow.keras.optimizers import SGD
-
 
 import numpy
 import random
 import pickle
 import json
 
-
-with open("D:/Study/Project/Mobile/2/chatbot/chatbot_engine/intents/intents.json", encoding="utf8") as file:
+with open("D:/Study/Project/Mobile/2/chatbot/chatbot_engine/intents/intents.json", encoding='utf8') as file:
   data = json.load(file)
 
 # prepare data
@@ -80,11 +77,3 @@ train_y= numpy.array(train_y)
 hist = model.fit(train_x, train_y, epochs= 1000, batch_size=8, verbose=1)
 model.save('chatbot_model.h5', hist)
 print("Done")
-
-
-
-
-
-
-
-
