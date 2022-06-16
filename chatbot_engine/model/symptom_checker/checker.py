@@ -35,10 +35,9 @@ def get_symptom_check(sentence, intent):
 def get_translation_result(result):
   translated_result = []
   NO_ISSUE = 3 if len(result) >= 3 else len(result)
-  i = 1;
+  i = 0;
   while i< NO_ISSUE:
     item = result[i]
-    print(item)
     translated_issue = get_translated_issue(item)
     translated_result.append(translated_issue)
     i+= 1
@@ -46,17 +45,16 @@ def get_translation_result(result):
 
 def get_translated_issue(item):
   issue = item["Issue"]
+  issue_data = [issue["Name"], issue["Accuracy"], issue["IcdName"]]
+
   translator = Translator()
-  translations1 = translator.translate(issue["Name"], src="en", dest="vi")
-  translations3 = translator.translate(issue["IcdName"], src="en", dest="vi")
+  translations = translator.translate(issue_data, src="en", dest="vi")
 
   result = {
-    "name": translations1.text,
-    "accuracy": issue["Accuracy"],
-    "icdName": translations3.text
+    "name": translations[0].text,
+    "accuracy": translations[1].text,
+    "icdName": translations[2].text
   }
-
-  
   return result
 
 def get_query_string(sentence):
@@ -77,4 +75,3 @@ def get_match_symptom_input_ID(inp):
     raise Exception("Không xác định được các triệu chứng")
   else:
     return result
-

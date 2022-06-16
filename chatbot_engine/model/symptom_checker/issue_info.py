@@ -28,6 +28,7 @@ def get_issue_info(sentence, intent):
   query_string = {"language":"en-gb"}
   headers = intent["api"]["headers"]
   url = intent["api"]["url"]
+
   issue_ID = get_issue_ID(sentence, data["Issues"])
   url = url.replace("ISSUE_ID", str(issue_ID))
 
@@ -45,22 +46,15 @@ def get_issue_ID(sentence, issues):
 
 def get_translation_result(issue):
   issue_data = [issue["Name"], issue["DescriptionShort"], issue["MedicalCondition"], issue["PossibleSymptoms"], issue["TreatmentDescription"]]
-  print(issue_data)
+
   translator = Translator()
-  translations2 = translator.translate(issue["Name"], src="en", dest="vi")
-  translations3 = translator.translate(issue["DescriptionShort"], src="en", dest="vi")
-  translations4 = translator.translate(issue["MedicalCondition"], src="en", dest="vi")
-  translations5 = translator.translate(issue["PossibleSymptoms"], src="en", dest="vi")
-  translations6 = translator.translate(issue["TreatmentDescription"], src="en", dest="vi")
-  
+  translations = translator.translate(issue_data, src="en", dest="vi")
 
   result = {
-    "name": translations2.text,
-    "descriptionShort": translations3.text,
-    "medicalCondition": translations4.text,
-    "possibleSymptoms": translations5.text,
-    "treatmentDescription": translations6.text,
+    "name": translations[0].text,
+    "descriptionShort": translations[1].text,
+    "medicalCondition": translations[2].text,
+    "possibleSymptoms": translations[3].text,
+    "treatmentDescription": translations[4].text,
   }
-  return result
-
-
+  return 
